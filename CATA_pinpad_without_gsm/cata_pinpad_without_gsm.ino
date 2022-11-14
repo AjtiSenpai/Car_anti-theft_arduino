@@ -90,9 +90,11 @@ Change each of Str[6], Str[7], Str[8], Str[9]*/
     if(Str[10]='*' && character==5 && Str[6]=='1' && Str[7]=='2' && Str[8]=='3' && Str[9]=='4' )
     {
       digitalWrite(green,HIGH);
+      digitalWrite(red,LOW);
       delay(500);
       digitalWrite(ign,HIGH);
       digitalWrite(pet,HIGH);
+      activated = 2;
     }
     else
     {
@@ -112,6 +114,7 @@ Change each of Str[6], Str[7], Str[8], Str[9]*/
     {
       digitalWrite(pet,LOW);
       digitalWrite(ign,LOW);
+      digitalWrite(green,LOW);
       activated = 0;
       character=0;
       Str[6]= '-';
@@ -122,8 +125,9 @@ Change each of Str[6], Str[7], Str[8], Str[9]*/
     }
     if(digitalRead(key) == LOW)
     {
-    digitalWrite(pet,LOW);
+      digitalWrite(pet,LOW);
       digitalWrite(ign,LOW);
+      digitalWrite(green,LOW);
       activated = 0;
       character=0;
       Str[6]= '-';
